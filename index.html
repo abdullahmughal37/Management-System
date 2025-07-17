@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hatoru Electronics Store Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Left Sidebar -->
+        <aside class="sidebar">
+            <div class="logo">
+                <div class="logo-icon">
+                    <i class="fas fa-bolt"></i>
+                </div>
+                <span class="logo-text">Hatoru</span>
+            </div>
+            
+            <nav class="nav-menu">
+                <a href="#" class="nav-item active">
+                    <i class="fas fa-th-large"></i>
+                    <span>Dashboard</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <i class="fas fa-chart-line"></i>
+                    <span>Analytic</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <i class="fas fa-box"></i>
+                    <span>Products</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <i class="fas fa-shopping-bag"></i>
+                    <span>Order</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <i class="fas fa-users"></i>
+                    <span>Customer</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <i class="fas fa-comment"></i>
+                    <span>Message</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <i class="fas fa-cog"></i>
+                    <span>Setting</span>
+                </a>
+            </nav>
+            
+            <div class="date-picker">
+                <i class="fas fa-calendar"></i>
+                <span id="current-date">07 July, 2022</span>
+                <i class="fas fa-chevron-down"></i>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Top Header -->
+            <header class="header">
+                <div class="header-left">
+                    <h1>Dashboard</h1>
+                </div>
+                <div class="header-center">
+                    <div class="search-bar">
+                        <input type="text" placeholder="Search" id="search-input">
+                        <i class="fas fa-search"></i>
+                    </div>
+                </div>
+                <div class="header-right">
+                    <div class="notification">
+                        <i class="fas fa-bell"></i>
+                        <span class="notification-badge">3</span>
+                    </div>
+                    <div class="user-profile">
+                        <span class="user-name">Marvin McKinney</span>
+                        <div class="user-avatar">
+                            <img src="https://via.placeholder.com/40x40/FF6B35/FFFFFF?text=M" alt="User Avatar">
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Dashboard Content -->
+            <div class="dashboard-content">
+                <!-- KPI Cards Row -->
+                <div class="kpi-row">
+                    <div class="kpi-card">
+                        <div class="kpi-content">
+                            <h3>Total Orders</h3>
+                            <div class="kpi-value" id="total-orders">3,265</div>
+                            <div class="kpi-change positive">
+                                <i class="fas fa-arrow-up"></i>
+                                <span>+0.01%</span>
+                            </div>
+                        </div>
+                        <div class="kpi-icon">
+                            <i class="fas fa-shopping-cart"></i>
+                        </div>
+                    </div>
+
+                    <div class="kpi-card">
+                        <div class="kpi-content">
+                            <h3>Total Sales</h3>
+                            <div class="kpi-value" id="total-sales">$752,210.00</div>
+                            <div class="kpi-change positive">
+                                <i class="fas fa-arrow-up"></i>
+                                <span>+1.21%</span>
+                            </div>
+                        </div>
+                        <div class="kpi-icon">
+                            <i class="fas fa-dollar-sign"></i>
+                        </div>
+                    </div>
+
+                    <div class="kpi-card">
+                        <div class="kpi-content">
+                            <h3>Total Visitors</h3>
+                            <div class="kpi-value" id="total-visitors">3,254,214</div>
+                            <div class="kpi-change negative">
+                                <i class="fas fa-arrow-down"></i>
+                                <span>-1.05%</span>
+                            </div>
+                        </div>
+                        <div class="kpi-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                    </div>
+
+                    <div class="kpi-card">
+                        <div class="kpi-content">
+                            <h3>Revenue</h3>
+                            <div class="kpi-value" id="revenue">$901,142.00</div>
+                            <div class="kpi-change positive">
+                                <i class="fas fa-arrow-up"></i>
+                                <span>+2.01%</span>
+                            </div>
+                        </div>
+                        <div class="kpi-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Charts Row -->
+                <div class="charts-row">
+                    <div class="chart-card">
+                        <div class="chart-header">
+                            <h3>Customer Overview</h3>
+                            <select class="chart-period">
+                                <option>Monthly</option>
+                                <option>Weekly</option>
+                                <option>Yearly</option>
+                            </select>
+                        </div>
+                        <div class="chart-container">
+                            <canvas id="customerOverviewChart"></canvas>
+                        </div>
+                    </div>
+
+                    <div class="chart-card">
+                        <div class="chart-header">
+                            <h3>Customer</h3>
+                        </div>
+                        <div class="chart-container">
+                            <canvas id="customerChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Data Cards Row -->
+                <div class="data-cards-row">
+                    <div class="data-card">
+                        <h3>Message</h3>
+                        <div class="message-list" id="message-list">
+                            <!-- Messages will be populated by JavaScript -->
+                        </div>
+                    </div>
+
+                    <div class="data-card">
+                        <h3>Best Selling</h3>
+                        <div class="product-list" id="best-selling-list">
+                            <!-- Best selling products will be populated by JavaScript -->
+                        </div>
+                    </div>
+
+                    <div class="data-card">
+                        <h3>Recent Orders</h3>
+                        <div class="order-list" id="recent-orders-list">
+                            <!-- Recent orders will be populated by JavaScript -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
