@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ElectraStore Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="logo">
+                <div class="logo-icon">
+                    <i class="fas fa-bolt"></i>
+                </div>
+                <span class="logo-text">ElectraStore</span>
+            </div>
+            
+            <nav class="nav-menu">
+                <ul>
+                    <li class="nav-item active">
+                        <a href="#dashboard" class="nav-link">
+                            <i class="fas fa-th-large"></i>
+                            <span>Dashboard</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#analytics" class="nav-link">
+                            <i class="fas fa-chart-line"></i>
+                            <span>Analytics</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#products" class="nav-link">
+                            <i class="fas fa-mobile-alt"></i>
+                            <span>Products</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#orders" class="nav-link">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span>Orders</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#customers" class="nav-link">
+                            <i class="fas fa-users"></i>
+                            <span>Customers</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#billing" class="nav-link">
+                            <i class="fas fa-file-invoice-dollar"></i>
+                            <span>Billing</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#inventory" class="nav-link">
+                            <i class="fas fa-warehouse"></i>
+                            <span>Inventory</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#messages" class="nav-link">
+                            <i class="fas fa-envelope"></i>
+                            <span>Messages</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#settings" class="nav-link">
+                            <i class="fas fa-cog"></i>
+                            <span>Settings</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            
+            <div class="date-selector">
+                <i class="fas fa-calendar-alt"></i>
+                <span>07 July 2023</span>
+                <i class="fas fa-chevron-down"></i>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Header -->
+            <header class="header">
+                <div class="header-left">
+                    <h1>Dashboard</h1>
+                </div>
+                <div class="header-right">
+                    <div class="search-box">
+                        <i class="fas fa-search"></i>
+                        <input type="text" placeholder="Search...">
+                    </div>
+                    <div class="header-icons">
+                        <button class="icon-btn">
+                            <i class="fas fa-bell"></i>
+                        </button>
+                        <button class="icon-btn">
+                            <i class="fas fa-cog"></i>
+                        </button>
+                    </div>
+                    <div class="user-profile">
+                        <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHZpZXdCb3g9IjAgMCA0MCA0MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGNpcmNsZSBjeD0iMjAiIGN5PSIyMCIgcj0iMjAiIGZpbGw9IiNGRjY3MzMiLz4KPHN2ZyB4PSI4IiB5PSI4IiB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSI+CjxwYXRoIGQ9Ik0xMiAxMkM5Ljc5IDEyIDggMTAuMjEgOCA4UzkuNzkgNDEyIDQgMTQuMjEgNCAxNiA2UzE2IDkuNzkgMTYgMTJaTTEyIDE0QzE2IDQxOC4wNCAyMCAxOC4wNCAyMEMxOC4wNCAyMiAxNiAyMiAxMiAyMkM4IDIyIDYgMjAgNiAyMEM2IDE4LjA0IDggMTYgMTIgMTZaIiBmaWxsPSJ3aGl0ZSIvPgo8L3N2Zz4KPC9zdmc+" alt="User" class="user-avatar">
+                        <div class="user-info">
+                            <span class="user-name">Admin</span>
+                            <span class="user-role">Store Manager</span>
+                        </div>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Stats Cards -->
+            <section class="stats-section">
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-header">
+                            <span class="stat-title">Total Orders</span>
+                        </div>
+                        <div class="stat-content">
+                            <div class="stat-number">3,265</div>
+                            <div class="stat-change positive">
+                                <i class="fas fa-arrow-up"></i>
+                                <span>+40%</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="stat-card">
+                        <div class="stat-header">
+                            <span class="stat-title">Total Sales</span>
+                        </div>
+                        <div class="stat-content">
+                            <div class="stat-number">$752,210</div>
+                            <div class="stat-change positive">
+                                <i class="fas fa-arrow-up"></i>
+                                <span>+12%</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="stat-card">
+                        <div class="stat-header">
+                            <span class="stat-title">Total Visitors</span>
+                        </div>
+                        <div class="stat-content">
+                            <div class="stat-number">3,254,214</div>
+                            <div class="stat-change negative">
+                                <i class="fas fa-arrow-down"></i>
+                                <span>-6%</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="stat-card">
+                        <div class="stat-header">
+                            <span class="stat-title">Revenue</span>
+                        </div>
+                        <div class="stat-content">
+                            <div class="stat-number">$901,142</div>
+                            <div class="stat-change positive">
+                                <i class="fas fa-arrow-up"></i>
+                                <span>+20%</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Charts and Analytics Section -->
+            <section class="analytics-section">
+                <div class="analytics-grid">
+                    <!-- Customer Overview Chart -->
+                    <div class="chart-card large">
+                        <div class="chart-header">
+                            <h3>Customer Overview</h3>
+                            <div class="chart-controls">
+                                <select class="period-select">
+                                    <option>Monthly</option>
+                                    <option>Weekly</option>
+                                    <option>Daily</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="chart-container">
+                            <canvas id="customerChart"></canvas>
+                            <div class="chart-tooltip">
+                                <span class="tooltip-label">Visitors</span>
+                                <span class="tooltip-value">182,432</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Customer Statistics -->
+                    <div class="chart-card small">
+                        <div class="chart-header">
+                            <h3>Customer</h3>
+                        </div>
+                        <div class="donut-chart-container">
+                            <canvas id="customerDonutChart"></canvas>
+                            <div class="donut-center">
+                                <div class="donut-percentage">80.45%</div>
+                                <div class="donut-label">Total</div>
+                            </div>
+                        </div>
+                        <div class="donut-legend">
+                            <div class="legend-item">
+                                <span class="legend-color blue"></span>
+                                <span>Current Customer</span>
+                            </div>
+                            <div class="legend-item">
+                                <span class="legend-color orange"></span>
+                                <span>New Customer</span>
+                            </div>
+                            <div class="legend-item">
+                                <span class="legend-color green"></span>
+                                <span>VIP Customer</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Recent Activities Section -->
+            <section class="activities-section">
+                <div class="activities-grid">
+                    <!-- Messages -->
+                    <div class="activity-card">
+                        <div class="activity-header">
+                            <h3>Messages</h3>
+                            <button class="see-all-btn">See All</button>
+                        </div>
+                        <div class="message-list" id="messageList">
+                            <!-- Messages will be populated by JavaScript -->
+                        </div>
+                    </div>
+
+                    <!-- Best Selling Products -->
+                    <div class="activity-card">
+                        <div class="activity-header">
+                            <h3>Best Selling</h3>
+                            <button class="see-all-btn">See All</button>
+                        </div>
+                        <div class="product-list" id="bestSellingList">
+                            <!-- Products will be populated by JavaScript -->
+                        </div>
+                    </div>
+
+                    <!-- Recent Orders -->
+                    <div class="activity-card">
+                        <div class="activity-header">
+                            <h3>Recent Orders</h3>
+                            <button class="see-all-btn">See All</button>
+                        </div>
+                        <div class="order-list" id="recentOrdersList">
+                            <!-- Orders will be populated by JavaScript -->
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Modals -->
+    <div id="customerModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Customer Details</h2>
+            <form id="customerForm">
+                <div class="form-group">
+                    <label for="customerName">Name:</label>
+                    <input type="text" id="customerName" required>
+                </div>
+                <div class="form-group">
+                    <label for="customerEmail">Email:</label>
+                    <input type="email" id="customerEmail" required>
+                </div>
+                <div class="form-group">
+                    <label for="customerPhone">Phone:</label>
+                    <input type="tel" id="customerPhone" required>
+                </div>
+                <div class="form-group">
+                    <label for="customerAddress">Address:</label>
+                    <textarea id="customerAddress" rows="3"></textarea>
+                </div>
+                <div class="form-actions">
+                    <button type="submit" class="btn-primary">Save Customer</button>
+                    <button type="button" class="btn-secondary" id="cancelCustomer">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div id="productModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Product Management</h2>
+            <form id="productForm">
+                <div class="form-group">
+                    <label for="productName">Product Name:</label>
+                    <input type="text" id="productName" required>
+                </div>
+                <div class="form-group">
+                    <label for="productCategory">Category:</label>
+                    <select id="productCategory" required>
+                        <option value="">Select Category</option>
+                        <option value="smartphones">Smartphones</option>
+                        <option value="tablets">Tablets</option>
+                        <option value="laptops">Laptops</option>
+                        <option value="accessories">Accessories</option>
+                        <option value="audio">Audio</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="productPrice">Price:</label>
+                    <input type="number" id="productPrice" step="0.01" required>
+                </div>
+                <div class="form-group">
+                    <label for="productStock">Stock Quantity:</label>
+                    <input type="number" id="productStock" required>
+                </div>
+                <div class="form-actions">
+                    <button type="submit" class="btn-primary">Save Product</button>
+                    <button type="button" class="btn-secondary" id="cancelProduct">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
