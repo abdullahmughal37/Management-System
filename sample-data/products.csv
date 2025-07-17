@@ -1,0 +1,15 @@
+name,category,price,stock,warranty_months,low_stock_threshold
+"iPhone 15 Pro Max","smartphones",1199.99,25,12,10
+"Samsung Galaxy S24 Ultra","smartphones",1199.99,20,12,10
+"iPad Pro 12.9 inch","tablets",1099.99,15,12,8
+"MacBook Pro 16 inch","laptops",2499.99,8,24,5
+"Dell XPS 13","laptops",1299.99,12,24,5
+"Samsung 65 inch QLED TV","tvs",1799.99,6,24,3
+"LG 55 inch OLED TV","tvs",1499.99,8,24,3
+"Sony WH-1000XM5 Headphones","audio",399.99,30,12,15
+"AirPods Pro 2nd Gen","audio",249.99,40,6,20
+"Samsung Galaxy Watch 6","accessories",329.99,25,12,10
+"Whirlpool French Door Refrigerator","refrigerators",1899.99,5,36,2
+"LG Front Load Washing Machine","washing_machines",899.99,8,24,3
+"Daikin Split AC 1.5 Ton","air_conditioners",599.99,10,24,5
+"Instant Pot Duo 7-in-1","kitchen_appliances",99.99,20,12,8
